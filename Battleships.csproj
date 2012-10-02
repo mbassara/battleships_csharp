@@ -1,0 +1,238 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AE6166BD-744F-43F2-8EAD-F9F4421FFBCD}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Battleships</RootNamespace>
+    <AssemblyName>Battleships</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>app_icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ClientWiFiService.cs" />
+    <Compile Include="Coordinates.cs" />
+    <Compile Include="MainWindow.Game.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainWindow.Designer.cs">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GameBoard.cs" />
+    <Compile Include="GamePacket.cs" />
+    <Compile Include="GamePacketSerialization.cs" />
+    <Compile Include="GameResult.cs" />
+    <Compile Include="Gobal.cs" />
+    <Compile Include="HostWiFiService.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ImageButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Ship.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ShotResult.cs" />
+    <Compile Include="WiFiService.cs" />
+    <EmbeddedResource Include="MainWindow.resx">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ship.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images\ic_im_ship_sel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images\background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images\ic_im_ship.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images\check.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images\ic_action_search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images\ic_background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images\ic_button_large.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images\ic_button_large_clicked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images\ic_button_mid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images\ic_button_mid_clicked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images\ic_button_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images\ic_button_small_clicked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images\ic_check_box_checked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images\ic_check_box_unchecked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images\ic_im_ship_hit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images\ic_im_ship_hit_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images\ic_im_ship_impossible.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images\ic_im_ship_impossible_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images\ic_im_ship_missed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images\ic_im_ship_missed_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images\ic_im_ship_not_shootable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images\ic_im_ship_not_shootable_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images\ic_im_ship_possible.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images\ic_im_ship_possible_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images\ic_im_ship_sel_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images\ic_im_ship_shootable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images\ic_im_ship_shootable_shot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images\ic_im_ship_shootable_shot_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images\ic_im_ship_shootable_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images\ic_im_ship_shootable_target.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images\ic_im_ship_shootable_target_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images\ic_im_ship_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images\ic_im_ship_sunk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images\ic_im_ship_sunk_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images\ic_launcher.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images\ic_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images\target.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images\label_back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images\background_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images\app_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="app_icon.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
