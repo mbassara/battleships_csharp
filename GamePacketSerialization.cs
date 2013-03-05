@@ -38,27 +38,27 @@ namespace Battleships
                     if (textReader.Name.Equals("gamePacket"))
                     {
                         String typeString = textReader.GetAttribute("type");
-                        if (typeString.Equals("whoStarts"))
+                        if (typeString.Equals("WHO_STARTS"))
                         {
                             type = GamePacket.TYPE.WHO_STARTS;
                             whoStarts = textReader.GetAttribute("whoStarts").Equals("host") ? Global.HOST_FIRST : Global.CLIENT_FIRST;
                             packet = new GamePacket(whoStarts);
                         }
-                        else if (typeString.Equals("textMessage"))
+                        else if (typeString.Equals("TEXT_MESSAGE"))
                         {
                             type = GamePacket.TYPE.TEXT_MESSAGE;
                             message = textReader.GetAttribute("message");
                             packet = new GamePacket(message);
                         }
-                        else if (typeString.Equals("shot"))
+                        else if (typeString.Equals("SHOT"))
                         {
                             type = GamePacket.TYPE.SHOT;
                         }
-                        else if (typeString.Equals("result"))
+                        else if (typeString.Equals("RESULT"))
                         {
                             type = GamePacket.TYPE.RESULT;
                         }
-                        else if (typeString.Equals("gameResult"))
+                        else if (typeString.Equals("GAME_RESULT"))
                         {
                             type = GamePacket.TYPE.GAME_RESULT;
                         }

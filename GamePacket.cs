@@ -24,30 +24,27 @@ namespace Battleships
 
         public String getXMLString()
         {
-            String result = "<gamePacket type=\"";
+            String result = "<gamePacket type=\"" + type;
 
             switch (type)
             {
                 case TYPE.GAME_RESULT:
-                    result += "gameResult\">";
-                    result += GameResult.ToXMLString(gameResult);
+                    result += "\">" + GameResult.ToXMLString(gameResult);
                     break;
                 case TYPE.RESULT:
-                    result += "result\">";
-                    result += ShotResult.ToXMLString(shotResult);
+                    result += "\">" + ShotResult.ToXMLString(shotResult);
                     break;
                 case TYPE.SHOT:
-                    result += "shot\">";
-                    result += Coordinates.ToXMLString(coordinates);
+                    result += "\">" + Coordinates.ToXMLString(coordinates);
                     break;
                 case TYPE.TEXT_MESSAGE:
-                    result += "textMessage\" message=\"" + message + "\"/>";
+                    result += "\" message=\"" + message + "\"/>";
                     return result;
                 case TYPE.WHO_STARTS:
-                    result += "whoStarts\" whoStarts=\"" + (whoStarts == Global.HOST_FIRST ? "host" : "client") + "\"/>";
+                    result += "\" whoStarts=\"" + (whoStarts == Global.HOST_FIRST ? "host" : "client") + "\"/>";
                     return result;
                 default:
-                    result += "error\"/>";
+                    result += "\"/>";
                     return result;
             }
 
